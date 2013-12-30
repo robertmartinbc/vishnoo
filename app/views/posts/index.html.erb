@@ -1,18 +1,27 @@
-<h1>All Posts</h1>
-<% if can? :create, Post %>
-  <%= link_to "New Post", new_post_path, class: 'btn btn-primary btn-mini' %>
-<% end %>
-<% @posts.each do |post| %>
-  <div class="media">
-    <div class="media-body">
-      <h4 class="media-heading">
-        <%= link_to post.title, post %>
-      </h4>
-      <small>
-        submitted <%= time_ago_in_words(post.created_at) %> ago by <%= post.user.name %><br/>
-        <%= post.comments.count %> Comments
-      </small>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-3 col-sm-offset-9">
     </div>
   </div>
-<% end %>
+</div>
+
+
+<h1>All Posts</h1>
+  <% if can? :create, Post %>
+    <%= link_to "New Post", new_post_path, class: 'btn btn-primary btn-mini' %>
+  <% end %>
+    <div class="container">
+      <div class="row col-sm-12">
+        <% @posts.each do |post| %>
+          <div class="col-sm-3 img-thumbnail">
+            <div>
+              <p><%= image_tag(post.image_url, class: "img-rounded") %></p>
+              <h4><strong><%= post.title %></strong></h4>
+              <br>
+            </div>
+          </div>
+          <% end %>
+        </div>
+        <br>
+      </div>
 
