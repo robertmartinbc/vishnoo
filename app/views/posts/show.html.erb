@@ -8,10 +8,13 @@
       <%= @post.user.name %>
     </small>
     <p><%= markdown @post.body %></p>
+    <small>
+      <%= image_tag(@post.image.thumb.url) %>
+    </small>
   </div>
   <div class="span4">
     <% if can? :edit, @post %>
-      <%= link_to "Edit", edit_topic_post_path(@topic,@post), class: 'btn btn-large btn-block' %>
+      <%= link_to "Edit", edit_post_path(@post), class: 'btn btn-large btn-block' %>
     <% end %>
   </div>
 </div>
