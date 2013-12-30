@@ -1,5 +1,5 @@
 Vishnoo::Application.routes.draw do
-  route to: 'welcome#index'
+  root to: 'welcome#index'
 
   get "welcome/gallery"
 
