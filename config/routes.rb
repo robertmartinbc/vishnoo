@@ -1,9 +1,12 @@
 Vishnoo::Application.routes.draw do
-  root to: 'welcome#index'
 
-  get "welcome/gallery"
+  resources :posts
 
-  get "welcome/tributes"
+  root :to => 'welcome#index'
+
+  match "gallery" => 'welcome#gallery', via: :get
+
+  match "tributes" => 'welcome#tributes', via: :get
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
