@@ -10,16 +10,9 @@
       <div class="row">
         <br>
         <% @posts.each do |post| %>
-          <div class="span3 img-rounded">
+          <div class="span3">
             <div>
-              <p><%= image_tag(post.image_url, class: "img-rounded") %></p>
               <h4><strong><%= link_to post.title, post_path(post) %></strong></h4>
-              <small>
-                <%= image_tag(post.user.avatar.tiny.url, class: "img-rounded") %>
-                submitted <%= time_ago_in_words(post.created_at) %> ago by
-                <%= post.user.name %>
-                <br>
-              </small>
               <br>
             </div>
           </div>
