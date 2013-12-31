@@ -5,6 +5,23 @@
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
+
+<script type="text/javascript">
+  $(document).ready(function() {
+  $("a.fancybox-button").fancybox({
+    prevEffect    : 'none',
+    nextEffect    : 'none',
+    closeBtn    : true,
+    helpers   : {
+      title : { type : 'inside' },
+      buttons : {}
+    }
+  });
+});
+</script>
+
+
+
 </head>
 <body>
   <div class="container">
@@ -13,11 +30,11 @@
         <ul class="nav nav-tabs">
           <li><%= link_to "Home", root_path %></li>
           <li><%= link_to "Tributes", posts_path %></li>
-          <li><%= link_to "Tributes", tributes_path %></li>
+          <li><%= link_to "Gallery", gallery_path %></li>
 
           <div class="pull-right user-info">
             <% if current_user %>
-              <%= image_tag(current_user.avatar.tiny.url) if current_user.avatar? %>
+              <%= image_tag(current_user.avatar.tiny.url, class: "img-rounded") if current_user.avatar? %>
             Hello <%= link_to (current_user.name || current_user.email), edit_user_registration_path %>! <%= link_to "Sign out", destroy_user_session_path, method: :delete %>
             <% else %>
               <%= link_to "Sign In", new_user_session_path %> or

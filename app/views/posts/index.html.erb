@@ -1,26 +1,30 @@
-<div class="container">
-  <div class="row">
-    <div class="col-sm-3 col-sm-offset-9">
-    </div>
-  </div>
-</div>
 
 
-<h1>All Posts</h1>
+
+<h1>All Tributes</h1>
   <% if can? :create, Post %>
-    <%= link_to "New Post", new_post_path, class: 'btn btn-primary btn-mini' %>
+    <%= link_to "New Tribute", new_post_path, class: 'btn btn-large' %>
+    <br>
   <% end %>
     <div class="container">
-      <div class="row col-sm-12">
+      <div class="row">
+        <br>
         <% @posts.each do |post| %>
-          <div class="col-sm-3 img-thumbnail">
+          <div class="span3 img-rounded">
             <div>
               <p><%= image_tag(post.image_url, class: "img-rounded") %></p>
-              <h4><strong><%= post.title %></strong></h4>
+              <h4><strong><%= link_to post.title, post_path(post) %></strong></h4>
+              <small>
+                <%= image_tag(post.user.avatar.tiny.url, class: "img-rounded") %>
+                submitted <%= time_ago_in_words(post.created_at) %> ago by
+                <%= post.user.name %>
+                <br>
+              </small>
               <br>
             </div>
           </div>
           <% end %>
+          <br>
         </div>
         <br>
       </div>

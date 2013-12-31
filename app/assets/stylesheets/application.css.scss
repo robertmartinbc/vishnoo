@@ -1,3 +1,18 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require fancybox
+ *= require_tree .
+ */
+
 @import "bootstrap";
 
 .user-info {
@@ -6,4 +21,32 @@
 
 .nav {
   margin-top: 5px;
+  font-size: 22px;
+}
+
+body {
+	background-color: #FFFFFF;
+	font-family: "Times New Roman", Times, serif;
+	color: #0088CC;
+}
+
+h1 {
+	color: #0088CC;
+}
+
+h2 {
+	color: #0088CC;
+}
+
+h3 {
+	color: #0088CC;
+}
+
+p {
+	color: #0088CC;
+}
+
+small {
+	color: #0088CC;
+	font-size: 16px;
 }

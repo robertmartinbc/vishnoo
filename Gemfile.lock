@@ -55,6 +55,8 @@ GEM
     execjs (2.0.2)
     faker (1.2.0)
       i18n (~> 0.5)
+    fancybox2-rails (0.2.4)
+      railties (>= 3.1.0)
     figaro (0.7.0)
       bundler (~> 1.0)
       rails (>= 3, < 5)
@@ -154,6 +156,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   devise
   faker
+  fancybox2-rails (~> 0.2.4)
   figaro
   fog
   jquery-rails

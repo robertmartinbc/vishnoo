@@ -37,6 +37,7 @@ gem 'mini_magick'
 gem 'fog'
 gem 'figaro'
 gem 'will_paginate', '~> 3.0'
+gem 'fancybox2-rails', '~> 0.2.4'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
