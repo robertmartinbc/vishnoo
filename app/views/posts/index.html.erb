@@ -12,6 +12,7 @@
         <% @posts.each do |post| %>
           <div class="span3">
             <div>
+              <p><%= image_tag(post.image_url, class: "img-rounded") %></p>
               <h4><strong><%= link_to post.title, post_path(post) %></strong></h4>
               <br>
             </div>
